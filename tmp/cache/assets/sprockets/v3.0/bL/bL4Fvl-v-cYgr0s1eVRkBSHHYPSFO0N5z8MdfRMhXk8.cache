@@ -1,0 +1,38 @@
+I"K(function() {
+  window.draw_graph2 = function() {
+    var ctx, myChart;
+    ctx = document.getElementById("myChart2").getContext('2d');
+    return myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: gon.name,
+        datasets: [
+          {
+            data: gon.absent,
+            borderWidth: 1
+          }
+        ]
+      }
+    });
+  };
+
+  window.draw_graph1 = function() {
+    var ctx, myChart;
+    ctx = document.getElementById("myChart1").getContext('2d');
+    return myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ["取得単位", "総単位"],
+        datasets: [
+          {
+            label: '# of Votes',
+            data: gon.data1,
+            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)']
+          }
+        ]
+      }
+    });
+  };
+
+}).call(this);
+:ET

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= include_gon %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+
+  <body>
+      <!-- <p class="notice"><%= notice %></p> -->
+     <!--  <p class="alert"><%= alert %></p> -->
+    <%if user_signed_in? then%>
+      <div class="item1">
+        
+      </div>
+      <div class="container" >
+        <%= link_to image_tag("icon1.png",:class => "item"), lessons_path %>
+        <%= link_to image_tag("icon2.png",:class => "item"), lessons_credit_path %>
+        <%= link_to image_tag("icon3.png",:class => "item"), lessons_graph_path %>
+      </div>
+      <div class="main-container">
+        <%= yield %>
+      </div>
+
+      <% else %>
+       <div class="new-body">
+        <%= yield %>
+       </div>
+      <% end %>
+  </body>
+</html>

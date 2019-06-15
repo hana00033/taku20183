@@ -1,0 +1,23 @@
+I"�(function() {
+  var ctx, myChart;
+
+  window.draw_graph = function() {};
+
+  ctx = document.getElementById("myChart").getContext('2d');
+
+  myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ["取得単位", "総単位"],
+      datasets: [
+        {
+          label: '# of Votes',
+          data: gon.dataA,
+          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)']
+        }
+      ]
+    }
+  });
+
+}).call(this);
+:ET
